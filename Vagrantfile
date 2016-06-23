@@ -1,7 +1,7 @@
 Vagrant.configure("2") do |config|
 
   # Stop gatling rsync on startup
-  config.gatling.rsync_on_startup = false
+  config.gatling.rsync_on_startup = false if Vagrant.has_plugin?("vagrant-gatling-rsync")
 
   # Configure the swarm master
   config.vm.define "master" do |m|
